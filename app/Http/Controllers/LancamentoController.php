@@ -106,10 +106,5 @@ class LancamentoController extends Controller
       }
     }
 
-    public function lancamentosPorIndicadorAno(Request $request, $indicador, $ano) {
-        if ($request->ajax()) {
-            $lancamentos = $this->repositorio->lancamentosPorIndicador($indicador, $ano);
-            return response()->json($lancamentos);
-        }
-    }
+
 }

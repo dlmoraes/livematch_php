@@ -120,8 +120,8 @@ Route::group(['middleware' => ['auth','superuser', 'web'], 'prefix' => 'lancamen
 
 Route::group(['middleware' => ['auth', 'web'], 'prefix' => 'common', 'where' => ['id' => '[0-9]+', 'indicador' => '[0-9]+', 'ano' => '[0-9]+']], function () {
    Route::get('indicadores', ['as' => 'common.indicadores', 'uses' => 'IndicadorController@indicadoresAjax']);
-   Route::get('indicador/{id}', ['as' => 'common.indicadorTemplate', 'uses' => 'IndicadorController@indicadorTemplate']);
+   Route::get('indicador/{id}', ['as' => 'common.indicadorTemplate', 'uses' => 'GraficoController@indicadorTemplate']);
    Route::get('categorias', ['as' => 'common.categorias', 'uses' => 'CategoriaController@categoriasAjax']);
    Route::get('tipos', ['as' => 'common.tipos', 'uses' => 'TipoController@tiposAjax']);
-   Route::get('lancamentos/{indicador}/{ano}', ['as' => 'common.tipos', 'uses' => 'TipoController@tiposAjax']);
+   Route::get('lancamentos/{indicador}/{ano}', ['as' => 'common.tipos', 'uses' => 'GraficoController@lancamentosIndicadorAjax']);
 });

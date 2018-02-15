@@ -102,11 +102,4 @@ class IndicadorController extends Controller
         return response()->json($indicadores);
       }
     }
-
-    public function indicadorTemplate(Request $request, $id) {
-        $indicador = $this->repositorio->porId($id);
-        return view('apps.indicador', compact('indicador'));
-    }
-
-
 }

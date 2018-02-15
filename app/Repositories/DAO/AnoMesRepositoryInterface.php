@@ -12,4 +12,5 @@ namespace App\Repositories\DAO;
 interface AnoMesRepositoryInterface extends RepositoryInterface
 {
     public function anoMesSelect();
+    public function mesesPorAnoSelect($ano);
 }
